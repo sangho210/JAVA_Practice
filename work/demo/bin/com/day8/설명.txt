@@ -1,7 +1,0 @@
-test1 - method overload
-test2 - method overload
-test3 -
-test4 -
-test5 -
-test6 - 계산기
-test7 - call by reference
