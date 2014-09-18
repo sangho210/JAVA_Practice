@@ -1,0 +1,5 @@
+test1 - private, this 설명
+test2 - static의 의미 설명
+test3 - static 이어서
+test4 - 메소드 오버로딩(method overloading)
+
