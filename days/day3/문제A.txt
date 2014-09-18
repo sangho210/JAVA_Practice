@@ -1,0 +1,202 @@
+문제01) 정수 5개를 입력 받아서 짝수, 홀수별 합계 출력.
+예) 1, 2, 3, 4, 5 입력시 ->
+    짝수의 합 = 6, 홀수의 합 = 9
+
+import java.util.Scanner;
+
+public class hw1{
+
+	public static void main(String[] args){
+	
+		Scanner sc = new Scanner(System.in);
+	
+		int a,sum1=0,sum2=0;
+
+	for (int i=1;i<=5 ;i++ )
+	{
+	System.out.print(i+"번째 정수 입력 ?");
+	a = sc.nextInt();
+	
+	if (a%2==0)
+		sum1+=a;
+	else
+		sum2+=a;
+	
+	}
+	System.out.println("짝수의 합 :" + sum1);
+	System.out.println("홀수의 합 :" + sum2);
+
+	}
+
+}
+
+
+문제02) 세 개의 정수를 입력 받고, 제일 큰 숫자와 제일 작은 숫자를 구분해서 출력.(if문 이용)
+예) 20, 30, 40 입력시 -> 제일 큰 숫자 40, 제일 작은 숫자 20
+
+import java.util.Scanner;
+
+public class hw3{
+	public static void main(String[] args){
+		
+		Scanner sc = new Scanner(System.in);
+
+		int a,b,c,t;
+
+		System.out.print("3개의 정수입력 ?");
+
+		a = sc.nextInt();
+		b = sc.nextInt();
+		c = sc.nextInt();
+	
+
+		if(a>b){
+			t=a; a=b; b=t;
+		}
+	
+		if(b>c){
+			t=b; b=c; c=t;
+		}
+
+		if(a>b){
+			t=a; a=b; b=t;
+		}
+
+		System.out.println("제일 큰 숫자 " + c + ", 제일 작은 숫자 "+ a);
+
+	}
+}
+
+
+
+문제03) 시험 성적이 결과에 따라서 A, B, C, D, F 학점을 출력합니다. if문 이용.
+        예) 100~90 -> A학점
+            89~80  -> B학점
+            79~70  -> C학점
+            69~60  -> D학점
+            59~0  -> F학점
+
+
+import java.util.Scanner;
+
+public class hw6{
+
+	public static void main(String[] args){
+	
+		Scanner sc = new Scanner(System.in);
+
+		int jumsu;
+		String hakjum;
+
+		System.out.print("점수를 입력하세요 : ");
+
+		jumsu = sc.nextInt();
+
+		if(jumsu >=90 && jumsu <= 100)
+			hakjum="A학점";
+		else if (jumsu >=80 && jumsu <= 89)
+			hakjum="B학점";
+		else if (jumsu >=70 && jumsu <= 79)
+			hakjum="C학점";
+		else if (jumsu >=60 && jumsu <= 69)
+			hakjum="D학점";
+		else
+			hakjum="F학점";
+
+		System.out.println("학점 : " + hakjum);
+
+
+
+	}
+}
+
+
+문제04) 단가 15,800원짜리 상품을 일정 수량 이상 구입시 할인을 해줍니다.
+        
+	할인율은 다음과 같습니다.
+        10개 이상 -> 10%
+        20개 이상 -> 15%
+        30개 이상 -> 20%
+        판매금액을 계산해봅니다.
+        예) 구입수량 15개인 경우 -> 구입수량: 15개, 판매총금액: 213300원
+
+
+import java.util.Scanner;
+
+public class hw7{
+
+	public static void main(String[] args){
+
+	Scanner sc = new Scanner(System.in);
+
+	int cnt, qty=15800;
+	double sum=0;
+
+	System.out.print("구입 수량을 입력하세요 : ");
+
+	cnt = sc.nextInt();
+
+	if(cnt >=30)
+		sum=cnt*qty*0.8;
+	else if(cnt >=20)
+		sum=cnt*qty*0.85;
+	else if(cnt >=10)
+		sum=cnt*qty*0.9;
+	else
+		sum=cnt*qty;
+
+	System.out.println("구입수량 : " + cnt + "개, 판매총금액 : " + sum +"원");
+
+
+	}
+
+}
+
+
+문제05)이름과 3과목의 점수를 입력 받아 다음조건에 따라 출력
+	-모든 과목의 점수가 40점 이상이고 평균이 60점 이상이면 합격
+	-한과목이라도 40점 미만이고 평균이 60점 이상이면 과락
+	-평균이 60점 미만이면 불합격
+
+이름 ? 홍길동
+세과목 점수 ? 60 70 80
+이름 : 홍길동
+총점 : 210, 평균 : 70, 판정 :합격
+
+
+import java.util.Scanner;
+
+public class StuQ3{
+
+	public static void main(String[] args){
+
+	Scanner sc = new Scanner(System.in);
+
+	String name;
+	int kor,eng,mat,tot,avg;
+	String pan;
+
+	System.out.print("이름 ? ");
+	name=sc.next();
+	System.out.print("세과목 점수 ?");
+	kor=sc.nextInt();
+	eng=sc.nextInt();
+	mat=sc.nextInt();
+
+	tot=kor+eng+mat;
+	avg=tot/3;
+
+	if(kor>=40&&eng>=40&&mat>=40&&avg>=60)
+		pan="합격";
+	else if(avg>=60)
+		pan="과락";
+	else
+		pan="불합격";
+
+	System.out.println("이름 : " + name);
+	System.out.println("총점 : " + tot + " 평균 : " + avg + " 판정 : " + pan);
+
+
+
+	}
+}
