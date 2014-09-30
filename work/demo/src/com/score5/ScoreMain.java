@@ -1,4 +1,4 @@
-package com.score4;
+package com.score5;
 
 import java.util.Scanner;
 
@@ -8,30 +8,28 @@ public class ScoreMain {
 
         String ch;
 
-        ScoreImpl si = new ScoreImpl();
+        Score si = new Score();
 
         Scanner sc = new Scanner(System.in);
 
         while(true) {
             si.printLine();
-            System.out.print("[메뉴]\n1.입력 2.출력 3.삭제 4.수정 5.검색 6.종료 =>");
+
+            System.out.print("[메뉴]\n1.입력 2.출력 3.검색 4.수정 5.삭제 6.종료 =>");
             ch = sc.next();
 
             if (ch.equals("1")) {
-                si.input();
+                si.choice(1);
             } else if (ch.equals("2")) {
-                si.iterate();
+                si.choice(2);
             } else if (ch.equals("3")) {
-                si.delete();
+                si.choice(3);
             } else if (ch.equals("4")) {
-                si.update();
+                si.choice(4);
             } else if (ch.equals("5")) {
-                si.printLine();
-                System.out.print("1.학번 2.이름 3.국어 4.영어 5.수학 6.총점 7.평균 =>");
-                ch = sc.next();
-                si.find(""+ch);
+                si.choice(5);
             } else if (ch.equals("6")) {
-                System.exit(0);
+                si.exit();
             }
         }
 
