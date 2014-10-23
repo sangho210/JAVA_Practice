@@ -13,12 +13,14 @@ public class Score {
 
     ArrayList<Data> al = new ArrayList<Data>();
 
+    String dataFile = "d:\\Work\\text\\scoredata.txt";
+
     public void loadAL() {
         try {
-            File f = new File("d:\\doc\\scoredata.txt");
+            File f = new File(dataFile);
 
             if(f.isFile()) {
-                FileInputStream fis = new FileInputStream("d:\\doc\\scoredata.txt");
+                FileInputStream fis = new FileInputStream(dataFile);
                 ObjectInputStream ois = new ObjectInputStream(fis);
 
                 al.clear();
@@ -180,7 +182,11 @@ public class Score {
 
     public void save() {
         try {
-            FileOutputStream fos = new FileOutputStream("d:\\doc\\scoredata.txt");
+            File f = new File(dataFile);
+            if(!f.getParentFile().exists())
+                f.getParentFile().mkdirs();
+
+            FileOutputStream fos = new FileOutputStream(dataFile);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
 
             oos.writeObject(al);
