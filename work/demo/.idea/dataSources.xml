@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="1032687399">
+    <data-source source="LOCAL" name="Oracle - TESTDB@localhost" uuid="ca560605-c837-4269-80c8-0bffdd1aff78">
+      <driver-ref>oracle</driver-ref>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//localhost:1521/TESTDB</jdbc-url>
+      <user-name>MOON</user-name>
+      <user-password>dfe8dfe5dfe8</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
